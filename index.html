@@ -31,26 +31,31 @@ body{
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
-  padding:1.25rem 3rem;
-  background:rgba(245,244,240,0.85);
+  padding:20px 48px;
+  background:rgba(251,245,221,0.85);
   backdrop-filter:blur(12px);
-  border-bottom:0.5px solid var(--border);
+  border-bottom:1px solid rgba(48,109,41,0.15);
 }
 .nav-logo{
   font-family:'Syne',sans-serif;
-  font-weight:800;font-size:1rem;
-  letter-spacing:0.05em;
-  color:var(--indigo);
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:0.08em;
+  color:#306D29;
   text-decoration:none;
+  text-transform:uppercase;
 }
-.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links{display:flex;gap:36px;list-style:none}
 .nav-links a{
-  font-size:0.85rem;font-weight:500;
-  color:var(--gray);text-decoration:none;
-  letter-spacing:0.03em;
+  font-size:13px;
+  font-weight:400;
+  letter-spacing:0.06em;
+  text-decoration:none;
+  color:#5a5a4a;
+  text-transform:uppercase;
   transition:color 0.2s;
 }
-.nav-links a:hover{color:var(--indigo)}
+.nav-links a:hover{color:#306D29}
 
 /* HERO */
 .hero{
@@ -287,6 +292,76 @@ section{padding:5rem 3rem}
   font-size:0.8rem;color:var(--gray);line-height:1.5;
 }
 
+
+/* ONE PAGE CASE MODAL */
+.modal-overlay{
+  align-items:flex-start;
+  overflow-y:auto;
+}
+.modal-inner{
+  max-width:1120px;
+  margin:3vh auto;
+  max-height:90vh;
+  overflow-y:auto;
+}
+.modal-tabs{display:none;}
+.modal-img-wrap{display:none !important;}
+.modal-caption{
+  padding:1.75rem 2rem 2.25rem;
+}
+.case-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1rem;
+}
+.case-block{
+  background:var(--off-white);
+  border:0.5px solid var(--border);
+  border-left:4px solid var(--gold);
+  border-radius:4px;
+  padding:1.15rem;
+  min-height:230px;
+}
+.case-block h3{
+  font-family:'Syne',sans-serif;
+  font-size:0.9rem;
+  color:var(--indigo);
+  margin-bottom:0.75rem;
+  letter-spacing:0.04em;
+}
+.case-block p,
+.case-block li{
+  font-size:0.84rem;
+  line-height:1.65;
+  color:#4d4d48;
+  margin-bottom:0.6rem;
+}
+.case-block ul{
+  padding-left:1rem;
+  margin:0;
+}
+.case-snapshot{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.5rem;
+  margin-bottom:1.25rem;
+}
+.case-pill{
+  font-size:0.7rem;
+  font-weight:500;
+  letter-spacing:0.04em;
+  color:var(--indigo);
+  background:rgba(27,42,107,0.06);
+  border:0.5px solid rgba(27,42,107,0.12);
+  border-radius:999px;
+  padding:0.35rem 0.7rem;
+}
+@media(max-width:900px){
+  .case-grid{grid-template-columns:1fr;}
+  .modal-inner{max-height:none;margin:1rem auto;}
+  .modal-caption{padding:1.25rem;}
+}
+
 /* SKILLS */
 .skills{background:#fff;border-top:0.5px solid var(--border)}
 .skills-grid{
@@ -421,7 +496,7 @@ footer{
 
 
 <nav>
-  <a class="nav-logo" href="#">TBT</a>
+  <a class="nav-logo" href="#">Thuan Portfolio</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -506,8 +581,8 @@ footer{
       <div class="project-body">
         <p class="project-number">01 | Customs Procedures</p>
         <h3 class="project-title">Export Customs Clearance: Vietnam to Korea</h3>
-        <p class="project-desc">Built a full export clearance case for a Vietnamese cashew exporter shipping to Korea. The work connected product classification, customs valuation, VNACCS declaration logic, Incoterms selection, and supporting certificates into one ready for shipment document flow.</p>
-        <div class="project-insight"><strong>Key point</strong>Showed how one incorrect HS code, missing certificate, or mismatched Incoterm can slow customs clearance and create cost risk for the exporter.</div>
+        <p class="project-desc">A full customs clearance case for a Vietnamese cashew exporter shipping to Korea. The case follows the shipment from contract preparation to customs declaration, showing how HS classification, invoice value, origin proof, plant health control, fumigation, sea transport documents, and VNACCS data have to align before the cargo can move.</p>
+        <div class="project-insight"><strong>Key point</strong>This project is about the operating logic behind export clearance. It shows how one cashew shipment becomes compliant through a complete document chain: commercial records, transport proof, origin certification, health and fumigation certificates, and electronic customs declaration.</div>
         <div class="project-tags">
           <span class="tag">Incoterms 2020 (CNF)</span>
           <span class="tag">HS Classification</span>
@@ -524,8 +599,8 @@ footer{
       <div class="project-body">
         <p class="project-number">02 | Supply Chain Operations</p>
         <h3 class="project-title">Multi Level Warehouse Design (1,000m²)</h3>
-        <p class="project-desc">Designed a three level warehouse facility within a 1,000m² footprint, balancing storage capacity, picking flow, staging, office operations, parking, fire exits, extinguisher placement, CCTV coverage, and forklift movement.</p>
-        <div class="project-insight"><strong>Key point</strong>The layout is not only a visual plan. It shows how safety, space use, and operational flow affect the speed and reliability of warehouse work.</div>
+        <p class="project-desc">A warehouse design study for a three level facility within a 1,000m² footprint. The project translates daily warehouse activity into a physical layout, balancing storage, receiving, picking, packing, quality control, forklift movement, office support, CCTV coverage, emergency exits, and parking.</p>
+        <div class="project-insight"><strong>Key point</strong>This project is about flow. It explains how inventory, people, vehicles, and safety points need to be arranged so the warehouse can operate with fewer bottlenecks and lower movement conflict.</div>
         <div class="project-tags">
           <span class="tag">Warehouse Layout</span>
           <span class="tag">Safety Compliance</span>
@@ -546,8 +621,8 @@ footer{
       <div class="project-body">
         <p class="project-number">03 | Supply Chain Management</p>
         <h3 class="project-title">Tiki Logistics Cost Optimization</h3>
-        <p class="project-desc">Analyzed Tiki's 1PL logistics model, mapped the cost pressure of in house delivery, and compared it with a proposed 3PL transition to GHN and Viettel Post using an annual cost model.</p>
-        <div class="project-insight"><strong>Key point</strong>The recommendation was not simply to outsource delivery. It showed when a company should trade direct control for lower fixed cost, wider coverage, and better scalability.</div>
+        <p class="project-desc">A logistics cost optimization case comparing Tiki's self operated delivery model with a third party logistics option through GHN and Viettel Post. The project examines fixed cost pressure, service coverage, warehouse transfer, partner roles, and annual cost impact.</p>
+        <div class="project-insight"><strong>Key point</strong>This project is about the make or buy decision in online retail logistics. It explains why a third party model can reduce fixed pressure, improve scalability, and make delivery operations easier to control as order volume changes.</div>
         <div class="project-tags">
           <span class="tag">1PL vs 3PL Analysis</span>
           <span class="tag">Cost Modelling</span>
@@ -625,7 +700,7 @@ footer{
     <div class="modal-img-wrap">
       <img class="modal-img" id="modal-img" src="" alt=""/>
     </div>
-    <p class="modal-caption" id="modal-caption"></p>
+    <div class="modal-caption" id="modal-caption"></div>
   </div>
 </div>
 
@@ -639,63 +714,62 @@ document.getElementById('wh-thumb').src = wm;
 const modals = {
   customs: {
     title: "Export Customs Clearance: Vietnam to Korea",
-    tabs: ["Overview"],
-    images: [""],
-    captions: ["A complete customs clearance case study covering a cashew nut export (HS 1404.90.99) from Ho Chi Minh City to Kwangyang, Korea. Key point: the project connects customs classification, valuation, Incoterms, certificates, and electronic declaration into one ready for shipment process. Document set included Sales Contract, Commercial Invoice, Packing List, Bill of Lading, Form AK Certificate of Origin, Phytosanitary Certificate, Fumigation Certificate, and VNACCS electronic customs declaration. Trade terms: CNF Kwang Yang. Payment: 100% T/T."]
+    tabs: ["Case summary", "Document flow", "Key learning"],
+    images: ["", "", ""],
+    captions: [
+      `<p><strong>Case summary</strong></p><p>This case explains how a Vietnamese cashew export order becomes a legally clear shipment from Ho Chi Minh City to Kwangyang, Korea. The product is classified under HS 1404.90.99, then connected to customs value, trade terms, payment terms, certificates, and the electronic declaration process.</p><p>The important idea is that customs clearance is not only a form filling task. The essay shows the logic behind each document and why the shipment cannot move smoothly unless classification, invoice value, origin proof, plant health control, fumigation, and carrier documents all match each other.</p>`,
+      `<p><strong>Document flow</strong></p><ul><li>Sales Contract, Commercial Invoice, and Packing List establish the commercial basis of the shipment.</li><li>Bill of Lading connects the cargo with the sea transport route and proves that the goods are loaded.</li><li>Form AK Certificate of Origin supports preferential treatment under the Korea trade framework.</li><li>Phytosanitary Certificate and Fumigation Certificate prove that the cashew shipment meets plant health and treatment requirements.</li><li>VNACCS electronic declaration brings the data into the Vietnamese customs system for export clearance.</li></ul><p>Trade term: CNF Kwang Yang. Payment term: one hundred percent T/T.</p>`,
+      `<p><strong>Key learning</strong></p><p>The strongest part of this case is the connection between theory and operating practice. HS code classification affects the declaration. Incoterms define responsibility. Certificates reduce destination risk. The declaration system turns the document set into an official export process.</p><p>For a portfolio, this shows that the project is not just about knowing document names. It shows the ability to understand how one international shipment is controlled from contract to port clearance.</p>`
+    ]
   },
   warehouse: {
     title: "Multi Level Warehouse Design",
-    tabs: ["Main floor (warehouse)", "2nd floor (office)", "Basement (parking)"],
-    images: [wm, wo, wb],
+    tabs: ["Operating logic", "Main floor", "Support floors"],
+    images: [wm, wm, wo],
     captions: [
-      "Main warehouse floor: 40m × 25m storage area with 3 m high racking, 20m drive aisle, forklift zones, staging area, quality control / picking and packing zone, and battery charging station. 60 CCTV cameras. Two emergency exits.",
-      "Office floor (27.7m × 19m): Open plan workstations, manager offices, server room, reception, canteen with seating, restrooms, and fire safety equipment throughout.",
-      "Basement parking: Separated motorcycle and car parking zones with clear lane markings, structural columns, and electrical warning signage."
+      `<p><strong>Operating logic</strong></p><p>This case is about designing a warehouse as a working system, not only drawing a building layout. The plan connects receiving, storage, picking, packing, quality control, forklift movement, staff work areas, safety points, and parking support into one facility.</p><p>The main idea is flow. Goods need to move through the building with fewer conflicts between people, forklifts, inventory, and vehicles. That is why the layout separates storage zones, operational zones, office support, and basement parking instead of treating the warehouse as one empty space.</p>`,
+      `<p><strong>Main floor</strong></p><p>The warehouse floor uses a forty metre by twenty five metre footprint with high racking, a wide drive aisle, staging space, picking and packing, quality control, and a battery charging area. Safety is built into the layout through emergency exits, CCTV coverage, warning signs, and clear access paths.</p><p>The key point is that capacity and movement have to be planned together. More racking is not always better if the movement path becomes slow or unsafe.</p>`,
+      `<p><strong>Support floors</strong></p><p>The office floor supports daily control through workstations, manager rooms, a server room, reception, canteen, restrooms, and fire safety equipment. The basement separates motorcycle and car parking with visible lanes and structural columns.</p><p>This makes the project stronger because it shows the warehouse as a full operation with people, data, vehicles, and inventory, not only shelves and boxes.</p>`
     ]
   },
   tiki: {
     title: "Tiki Supply Chain Cost Optimization",
-    tabs: ["Summary"],
-    images: [""],
-    captions: ["Analysis of Tiki's 1PL (in house) logistics model versus a proposed 3PL transition to GHN and Viettel Post. Key finding: estimated annual logistics cost under 1PL model is about 2.23 billion VND vs 3PL model about 664 million VND, a potential saving of over 60%. Key point: the strongest part of the research is the decision logic behind outsourcing, not just the cost number. Recommended a phased warehouse transfer from Tiki's District 7 facility to GHN's Tan Binh hub, with clearly defined roles for each party."]
+    tabs: ["Case summary", "Cost logic", "Recommendation"],
+    images: ["", "", ""],
+    captions: [
+      `<p><strong>Case summary</strong></p><p>This case studies Tiki's logistics model and asks whether the company should keep a self operated delivery structure or shift part of the operation to third party logistics providers such as GHN and Viettel Post.</p><p>The essay is mainly about logistics decision making. It compares control, coverage, cost pressure, warehouse responsibility, and scalability instead of only saying one option is cheaper.</p>`,
+      `<p><strong>Cost logic</strong></p><p>The comparison shows that the self operated model creates high fixed pressure because Tiki has to carry vehicle, staff, warehouse, and operating costs directly. The third party model reduces that burden by converting part of the operation into service based cost.</p><p>The estimated annual logistics cost falls from about 2.23 billion VND in the self operated model to about 664 million VND in the third party model. The point is not just the saving. The point is that outsourcing can protect the business when order volume changes and delivery coverage becomes harder to manage internally.</p>`,
+      `<p><strong>Recommendation</strong></p><p>The recommended direction is a phased transition rather than a sudden switch. Tiki can transfer selected warehouse and delivery functions from its District 7 facility to GHN's Tan Binh hub, while keeping control over service quality, data reporting, customer experience, and partner performance.</p><p>This makes the case practical because it treats outsourcing as a managed operating change, not a one step cost cut.</p>`
+    ]
   }
 };
 
-let activeTab = 0;
 let currentModal = null;
+
+function cleanCaption(html) {
+  return html
+    .replace(/<p><strong>/g, '<h3>')
+    .replace(/<\/strong><\/p>/g, '</h3>');
+}
 
 function openModal(id) {
   currentModal = id;
-  activeTab = 0;
   const m = modals[id];
   document.getElementById('modal-title').textContent = m.title;
-  const tabsEl = document.getElementById('modal-tabs');
-  tabsEl.innerHTML = m.tabs.map((t,i) => `<button class="modal-tab ${i===0?'active':''}" onclick="switchTab(${i})">${t}</button>`).join('');
+  document.getElementById('modal-tabs').innerHTML = '';
   updateModalContent();
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
-function switchTab(i) {
-  activeTab = i;
-  document.querySelectorAll('.modal-tab').forEach((t,idx) => t.classList.toggle('active', idx===i));
-  updateModalContent();
-}
-
 function updateModalContent() {
   const m = modals[currentModal];
-  const imgEl = document.getElementById('modal-img');
   const capEl = document.getElementById('modal-caption');
   const imgWrap = document.querySelector('.modal-img-wrap');
-  if (m.images[activeTab]) {
-    imgEl.src = m.images[activeTab];
-    imgEl.style.display = 'block';
-    imgWrap.style.display = 'block';
-  } else {
-    imgEl.style.display = 'none';
-    imgWrap.style.display = 'none';
-  }
-  capEl.textContent = m.captions[activeTab];
+  imgWrap.style.display = 'none';
+  const snapshot = `<div class="case-snapshot">${m.tabs.map(t => `<span class="case-pill">${t}</span>`).join('')}</div>`;
+  const blocks = m.captions.map((caption) => `<article class="case-block">${cleanCaption(caption)}</article>`).join('');
+  capEl.innerHTML = `${snapshot}<div class="case-grid">${blocks}</div>`;
 }
 
 function closeModal(e) {
@@ -1473,7 +1547,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
 
 &lt;!-- NAV --&gt;
 &lt;nav&gt;
-  &lt;div class=&quot;nav-logo&quot;&gt;Thuan Marketing&lt;/div&gt;
+  &lt;div class=&quot;nav-logo&quot;&gt;Thuan Portfolio&lt;/div&gt;
   &lt;ul class=&quot;nav-links&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;#projects&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
@@ -1560,12 +1634,12 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
         &lt;h3 class=&quot;card-title&quot;&gt;CASHERA: Vietnamese Cashews to the UK Market&lt;/h3&gt;
         &lt;p class=&quot;card-subtitle&quot;&gt;Market entry business plan | Chapter 6 Lead&lt;/p&gt;
         &lt;p class=&quot;card-desc&quot;&gt;
-          A full market entry plan for CASHERA, a premium Vietnamese cashew brand entering the UK market. The project covered TAM/SAM/SOM analysis, pricing strategy, sales forecasting, cost structure, and an IMC plan across Amazon UK, social media, and food exhibitions.
+          A detailed UK market entry business plan for CASHERA, a Vietnamese cashew brand moving from export supply into branded healthy snack retail. The case connects product adaptation, premium origin positioning, communication planning, sales forecast, trade terms, overhead structure, and financial feasibility.
         &lt;/p&gt;
-        &lt;div class=&quot;card-insight&quot;&gt;&lt;strong&gt;Key research point&lt;/strong&gt;The strongest angle is Vietnam origin plus premium positioning. The plan shows how a cashew product can move from commodity export logic into a branded consumer product with clearer margins and a stronger story.&lt;/div&gt;
+        &lt;div class=&quot;card-insight&quot;&gt;&lt;strong&gt;Key point&lt;/strong&gt;The strongest angle is not only that Vietnam already supplies cashews to the UK. The stronger story is how CASHERA can use Vietnamese origin, clean label positioning, controlled packaging, and distributor led retail access to move from commodity logic into a branded consumer product.&lt;/div&gt;
         &lt;div class=&quot;card-contribution&quot;&gt;
-          &lt;div class=&quot;card-contribution-label&quot;&gt;My Contribution&lt;/div&gt;
-          &lt;p&gt;Led Chapter 6, the financial and commercial core of the plan. Built the £199,200 first year overhead breakdown, five year sales forecast, breakeven analysis, and income statement. Defined the hybrid pricing strategy (market driven + value led + penetration) with CIF Incoterm and Irrevocable L/C payment terms.&lt;/p&gt;
+          &lt;div class=&quot;card-contribution-label&quot;&gt;Key Point&lt;/div&gt;
+          &lt;p&gt;The case argues that CASHERA should enter the UK as an affordable premium snack for middle income, health conscious consumers. It focuses on a 100g packaged cashew product, a net selling price of £1.25 in the first year, and a gradual five year forecast that grows from 360,000 packs to 1,080,000 packs. The business plan also shows why the first year is close to breakeven: fixed launch costs, distributor support, compliance, packaging adaptation, warehousing, and promotion are high at the start, but profitability improves as volume grows.&lt;/p&gt;
         &lt;/div&gt;
         &lt;div class=&quot;card-tags&quot;&gt;
           &lt;span class=&quot;tag green&quot;&gt;Financial Modelling&lt;/span&gt;
@@ -1614,12 +1688,12 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
         &lt;h3 class=&quot;card-title&quot;&gt;Danisa Rainbow Cookies: Limited Edition Tet Campaign&lt;/h3&gt;
         &lt;p class=&quot;card-subtitle&quot;&gt;Product concept &amp; positioning | Group project&lt;/p&gt;
         &lt;p class=&quot;card-desc&quot;&gt;
-          A market entry concept for a limited edition Tet product under the Danisa brand, targeting middle to high income Vietnamese consumers. The campaign centred on a &quot;7 colors, 7 flavors&quot; rainbow theme, positioning the tin as a premium cultural gift, not just a cookie product.
+          A Tet campaign concept for Danisa Rainbow Cookies, built around the idea of seven colours and seven flavours as a seasonal gifting symbol. The project positions the tin as a premium family gift for Vietnamese consumers, not simply a product extension.
         &lt;/p&gt;
-        &lt;div class=&quot;card-insight&quot;&gt;&lt;strong&gt;Key research point&lt;/strong&gt;Tet gifting is driven by emotion, status, and family symbolism. The campaign works better when the rainbow idea is framed as seven wishes or seven expressions of care, making the product more meaningful than a normal seasonal package.&lt;/div&gt;
+        &lt;div class=&quot;card-insight&quot;&gt;&lt;strong&gt;Key point&lt;/strong&gt;Tet gifting is driven by emotion, status, and family symbolism. The rainbow concept becomes stronger when each colour is treated as a wish, a flavour, or an expression of care, giving the product a reason to exist beyond decoration.&lt;/div&gt;
         &lt;div class=&quot;card-contribution&quot;&gt;
-          &lt;div class=&quot;card-contribution-label&quot;&gt;My Contribution&lt;/div&gt;
-          &lt;p&gt;Structured the strategic rationale for choosing Danisa, supported by Vietnam&#x27;s 1.33B USD cookie market and Tet&#x27;s 54% share of confectionery sales. Shaped the brand positioning section, framing Rainbow Cookies as a cultural symbol rather than a product extension. Refined and presented both sections to align with the campaign brief.&lt;/p&gt;
+          &lt;div class=&quot;card-contribution-label&quot;&gt;Key Point&lt;/div&gt;
+          &lt;p&gt;The case explains how a familiar cookie brand can create seasonal value through packaging, cultural timing, segmentation, and positioning. Instead of competing only on taste, the product is framed as a meaningful gift for Lunar New Year, using colour, flavour variety, and premium tin design to create stronger shelf impact and emotional purchase motivation.&lt;/p&gt;
         &lt;/div&gt;
         &lt;div class=&quot;card-tags&quot;&gt;
           &lt;span class=&quot;tag green&quot;&gt;Brand Positioning&lt;/span&gt;
