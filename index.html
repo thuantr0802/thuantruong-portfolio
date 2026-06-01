@@ -4,7 +4,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Truong Ba Thuan — Unified Portfolio</title>
+<title>Truong Ba Thuan Unified Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -206,6 +206,25 @@ section{padding:5rem 3rem}
   line-height:1.65;margin-bottom:1rem;
   font-weight:300;
 }
+.project-insight{
+  background:rgba(201,168,76,0.12);
+  border-left:3px solid var(--gold);
+  padding:0.85rem 1rem;
+  margin:0.25rem 0 1.1rem;
+  border-radius:0 4px 4px 0;
+  font-size:0.82rem;
+  line-height:1.55;
+  color:#333;
+  font-weight:300;
+}
+.project-insight strong{
+  display:block;
+  color:var(--indigo);
+  font-size:0.68rem;
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+  margin-bottom:0.25rem;
+}
 .project-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.25rem}
 .tag{
   font-size:0.7rem;font-weight:500;
@@ -385,7 +404,7 @@ footer{
 @media(max-width:768px){
   .unified-switcher{top:auto;bottom:1rem;right:1rem;left:1rem;justify-content:center}
   .unified-tab{flex:1;text-align:center;padding:.72rem .5rem}
-  .marketing-frame{height:calc(100vh - 0px)}
+  .marketing-frame{height:100vh}
 }
 
 </style>
@@ -418,7 +437,7 @@ footer{
   <div class="hero-content">
     <span class="hero-tag">Export · Import · Logistics</span>
     <h1 class="hero-name">Truong Ba<br><span>Thuan</span></h1>
-    <p class="hero-desc">A final-year International Business student specializing in export-import operations — from customs documentation and HS classification to supply chain cost analysis. Based in Ho Chi Minh City.</p>
+    <p class="hero-desc">A final year International Business student specializing in export and import operations, covering customs documentation, HS classification, and supply chain cost analysis. Based in Ho Chi Minh City.</p>
     <div class="hero-actions">
       <a class="btn-primary" href="#contact">Get in touch →</a>
       <a class="btn-secondary" href="#projects">View my work</a>
@@ -449,7 +468,7 @@ footer{
       </div>
       <div class="about-meta-item">
         <p class="meta-label">Target role</p>
-        <p class="meta-value">Export-Import Intern</p>
+        <p class="meta-value">Export and Import Intern</p>
       </div>
       <div class="about-meta-item">
         <p class="meta-label">LinkedIn</p>
@@ -459,9 +478,9 @@ footer{
     <div>
       <h2 class="section-title">How the world<br>moves goods.</h2>
       <div class="about-text">
-        <p>I'm Thuan — a final-year International Business student at Ton Duc Thang University with a focus on export-import operations and trade compliance. I'm drawn to the mechanics of global trade: how documentation, Incoterms, customs systems, and logistics decisions all connect to move a shipment from factory to final destination.</p>
-        <p>My academic work has taken me through real customs clearance procedures using Vietnam's VNACCS system, warehouse operations design, and supply chain cost analysis for Vietnamese e-commerce. I have training-level familiarity with CargoWise One and a solid grounding in Incoterms 2020 and HS code classification.</p>
-        <p>I'm actively seeking a logistics or export-import internship where I can apply this foundation in a professional environment — and keep learning from people who do this every day.</p>
+        <p>I'm Thuan, a final year International Business student at Ton Duc Thang University with a focus on export and import operations and trade compliance. I'm drawn to the mechanics of global trade: how documentation, Incoterms, customs systems, and logistics decisions all connect to move a shipment from factory to final destination.</p>
+        <p>My academic work has taken me through real customs clearance procedures using Vietnam's VNACCS system, warehouse operations design, and supply chain cost analysis for Vietnamese online commerce. I have introductory familiarity with CargoWise One and a solid grounding in Incoterms 2020 and HS code classification.</p>
+        <p>I'm actively seeking a logistics or export and import internship where I can apply this foundation in a professional environment while continuing to learn from people who do this every day.</p>
       </div>
     </div>
   </div>
@@ -485,9 +504,10 @@ footer{
         </div>
       </div>
       <div class="project-body">
-        <p class="project-number">01 — Customs Procedures</p>
+        <p class="project-number">01 | Customs Procedures</p>
         <h3 class="project-title">Export Customs Clearance: Vietnam to Korea</h3>
-        <p class="project-desc">Worked through a complete export customs clearance case for a Vietnamese cashew exporter shipping to Korea — covering HS code classification (1404.90.99), VNACCS electronic declaration, customs valuation using the transaction value method, and a full trade document set including Bill of Lading, Form AK certificate of origin, phytosanitary certificate, and fumigation certificate.</p>
+        <p class="project-desc">Built a full export clearance case for a Vietnamese cashew exporter shipping to Korea. The work connected product classification, customs valuation, VNACCS declaration logic, Incoterms selection, and supporting certificates into one ready for shipment document flow.</p>
+        <div class="project-insight"><strong>Key point</strong>Showed how one incorrect HS code, missing certificate, or mismatched Incoterm can slow customs clearance and create cost risk for the exporter.</div>
         <div class="project-tags">
           <span class="tag">Incoterms 2020 (CNF)</span>
           <span class="tag">HS Classification</span>
@@ -502,14 +522,15 @@ footer{
     <div class="project-card" onclick="openModal('warehouse')">
       <img class="project-img" id="wh-thumb" alt="Warehouse layout design" style="object-fit:contain;padding:0.5rem;background:#f0f0eb;"/>
       <div class="project-body">
-        <p class="project-number">02 — Supply Chain Operations</p>
-        <h3 class="project-title">Multi-Floor Warehouse Design (1,000m²)</h3>
-        <p class="project-desc">Designed a three-floor warehouse facility within a 1,000m² footprint — main warehouse floor with racking, staging and pick-pack zones; office floor with operations and server room; basement parking. Compliant with safety regulations including fire exits, extinguisher placement, and forklift clearance.</p>
+        <p class="project-number">02 | Supply Chain Operations</p>
+        <h3 class="project-title">Multi Level Warehouse Design (1,000m²)</h3>
+        <p class="project-desc">Designed a three level warehouse facility within a 1,000m² footprint, balancing storage capacity, picking flow, staging, office operations, parking, fire exits, extinguisher placement, CCTV coverage, and forklift movement.</p>
+        <div class="project-insight"><strong>Key point</strong>The layout is not only a visual plan. It shows how safety, space use, and operational flow affect the speed and reliability of warehouse work.</div>
         <div class="project-tags">
           <span class="tag">Warehouse Layout</span>
           <span class="tag">Safety Compliance</span>
           <span class="tag">Icograms</span>
-          <span class="tag">Multi-SKU Operations</span>
+          <span class="tag">Multi SKU Operations</span>
         </div>
         <span class="project-link">View all floors →</span>
       </div>
@@ -523,13 +544,14 @@ footer{
         </div>
       </div>
       <div class="project-body">
-        <p class="project-number">03 — Supply Chain Management</p>
+        <p class="project-number">03 | Supply Chain Management</p>
         <h3 class="project-title">Tiki Logistics Cost Optimization</h3>
-        <p class="project-desc">Analyzed Tiki's 1PL logistics model, identified cost inefficiencies in urban delivery operations, and proposed a 3PL transition to GHN with a detailed cost comparison demonstrating potential annual savings of over 60% in logistics expenditure.</p>
+        <p class="project-desc">Analyzed Tiki's 1PL logistics model, mapped the cost pressure of in house delivery, and compared it with a proposed 3PL transition to GHN and Viettel Post using an annual cost model.</p>
+        <div class="project-insight"><strong>Key point</strong>The recommendation was not simply to outsource delivery. It showed when a company should trade direct control for lower fixed cost, wider coverage, and better scalability.</div>
         <div class="project-tags">
           <span class="tag">1PL vs 3PL Analysis</span>
           <span class="tag">Cost Modelling</span>
-          <span class="tag">Vietnamese E-commerce</span>
+          <span class="tag">Vietnamese Online Commerce</span>
           <span class="tag">GHN / Viettel Post</span>
         </div>
         <span class="project-link">View case summary →</span>
@@ -569,8 +591,8 @@ footer{
     </div>
     <div class="skill-group">
       <p class="skill-group-title">Languages</p>
-      <div class="skill-item"><span class="skill-dot"></span>Vietnamese — Native</div>
-      <div class="skill-item"><span class="skill-dot"></span>English — IELTS Academic 7.0</div>
+      <div class="skill-item"><span class="skill-dot"></span>Vietnamese: Native</div>
+      <div class="skill-item"><span class="skill-dot"></span>English: IELTS Academic 7.0</div>
     </div>
   </div>
 </section>
@@ -580,7 +602,7 @@ footer{
 <section class="contact" id="contact">
   <p class="section-label">Get in touch</p>
   <h2 class="section-title">Let's connect</h2>
-  <p class="contact-sub">I'm actively looking for an export-import internship in Ho Chi Minh City. If you think there's a fit, I'd love to hear from you.</p>
+  <p class="contact-sub">I'm actively looking for an export and import internship in Ho Chi Minh City. If you think there's a fit, I'd love to hear from you.</p>
   <div class="contact-links">
     <a class="btn-primary" href="mailto:thuantr0802@gmail.com">thuantr0802@gmail.com →</a>
     <a class="btn-secondary" href="https://linkedin.com/in/thuanbatruong" target="_blank">LinkedIn Profile</a>
@@ -616,18 +638,18 @@ document.getElementById('wh-thumb').src = wm;
 
 const modals = {
   customs: {
-    title: "Export Customs Clearance — Vietnam to Korea",
+    title: "Export Customs Clearance: Vietnam to Korea",
     tabs: ["Overview"],
     images: [""],
-    captions: ["A complete customs clearance case study covering a cashew nut export (HS 1404.90.99) from Ho Chi Minh City to Kwangyang, Korea. Document set included: Sales Contract, Commercial Invoice, Packing List, Bill of Lading, Form AK Certificate of Origin, Phytosanitary Certificate, Fumigation Certificate, and VNACCS electronic customs declaration. Trade terms: CNF Kwang Yang. Payment: 100% T/T."]
+    captions: ["A complete customs clearance case study covering a cashew nut export (HS 1404.90.99) from Ho Chi Minh City to Kwangyang, Korea. Key point: the project connects customs classification, valuation, Incoterms, certificates, and electronic declaration into one ready for shipment process. Document set included Sales Contract, Commercial Invoice, Packing List, Bill of Lading, Form AK Certificate of Origin, Phytosanitary Certificate, Fumigation Certificate, and VNACCS electronic customs declaration. Trade terms: CNF Kwang Yang. Payment: 100% T/T."]
   },
   warehouse: {
-    title: "Multi-Floor Warehouse Design",
+    title: "Multi Level Warehouse Design",
     tabs: ["Main floor (warehouse)", "2nd floor (office)", "Basement (parking)"],
     images: [wm, wo, wb],
     captions: [
-      "Main warehouse floor: 40m × 25m storage area with 3m-high racking, 20m drive aisle, forklift zones, staging area, quality control / pick-pack zone, and battery charging station. 60 CCTV cameras. Two emergency exits.",
-      "Office floor (27.7m × 19m): Open-plan workstations, manager offices, server room, reception, canteen with seating, restrooms, and fire safety equipment throughout.",
+      "Main warehouse floor: 40m × 25m storage area with 3 m high racking, 20m drive aisle, forklift zones, staging area, quality control / picking and packing zone, and battery charging station. 60 CCTV cameras. Two emergency exits.",
+      "Office floor (27.7m × 19m): Open plan workstations, manager offices, server room, reception, canteen with seating, restrooms, and fire safety equipment throughout.",
       "Basement parking: Separated motorcycle and car parking zones with clear lane markings, structural columns, and electrical warning signage."
     ]
   },
@@ -635,7 +657,7 @@ const modals = {
     title: "Tiki Supply Chain Cost Optimization",
     tabs: ["Summary"],
     images: [""],
-    captions: ["Analysis of Tiki's 1PL (self-operated) logistics model versus a proposed 3PL transition to GHN and Viettel Post. Key finding: estimated annual logistics cost under 1PL model ≈ 2.23 billion VND vs 3PL model ≈ 664 million VND — a potential saving of over 60%. Recommended a phased warehouse transfer from Tiki's District 7 facility to GHN's Tan Binh hub, with clearly defined roles for each party."]
+    captions: ["Analysis of Tiki's 1PL (in house) logistics model versus a proposed 3PL transition to GHN and Viettel Post. Key finding: estimated annual logistics cost under 1PL model is about 2.23 billion VND vs 3PL model about 664 million VND, a potential saving of over 60%. Key point: the strongest part of the research is the decision logic behind outsourcing, not just the cost number. Recommended a phased warehouse transfer from Tiki's District 7 facility to GHN's Tan Binh hub, with clearly defined roles for each party."]
   }
 };
 
@@ -695,7 +717,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
 &lt;head&gt;
 &lt;meta charset=&quot;UTF-8&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-&lt;title&gt;Marketing Portfolio — Truong Ba Thuan&lt;/title&gt;
+&lt;title&gt;Marketing Portfolio: Truong Ba Thuan&lt;/title&gt;
 &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=DM+Sans:wght@300;400;500&amp;family=Syne:wght@700;800&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
 &lt;style&gt;
   :root {
@@ -1023,7 +1045,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
     max-width: 1100px;
   }
 
-  /* Project card — large */
+  /* Project card: large */
   .project-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -1188,7 +1210,28 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
     font-size: 14px;
     line-height: 1.8;
     color: var(--text-muted);
-    margin-bottom: 28px;
+    margin-bottom: 20px;
+  }
+
+  .card-insight {
+    background: var(--card-warm);
+    border-left: 3px solid var(--green);
+    padding: 14px 16px;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  .card-insight strong {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 4px;
   }
 
   .card-contribution {
@@ -1430,7 +1473,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
 
 &lt;!-- NAV --&gt;
 &lt;nav&gt;
-  &lt;div class=&quot;nav-logo&quot;&gt;Thuan — Marketing&lt;/div&gt;
+  &lt;div class=&quot;nav-logo&quot;&gt;Thuan Marketing&lt;/div&gt;
   &lt;ul class=&quot;nav-links&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;#projects&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
@@ -1447,7 +1490,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
     &lt;h1 class=&quot;hero-name&quot;&gt;Truong Ba&lt;br&gt;&lt;em&gt;Thuan&lt;/em&gt;&lt;/h1&gt;
     &lt;p class=&quot;hero-subtitle&quot;&gt;Global Marketing &amp; Brand Strategy&lt;/p&gt;
     &lt;p class=&quot;hero-desc&quot;&gt;
-      International Business student with a focus on market entry strategy, brand positioning, and integrated marketing communications. My logistics background gives me a perspective most marketing candidates don&#x27;t have — I understand the supply chain behind the product, not just the campaign in front of it.
+      International Business student with a focus on market entry strategy, brand positioning, and integrated marketing communications. My logistics background gives me a perspective most marketing candidates don&#x27;t have because I understand the supply chain behind the product, not just the campaign in front of it.
     &lt;/p&gt;
     &lt;div class=&quot;hero-cta&quot;&gt;
       &lt;a href=&quot;#projects&quot; class=&quot;btn-primary&quot;&gt;View Projects&lt;/a&gt;
@@ -1477,7 +1520,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
   &lt;div class=&quot;section-label&quot;&gt;Selected Work&lt;/div&gt;
   &lt;h2 class=&quot;section-title&quot;&gt;Marketing &lt;em&gt;Projects&lt;/em&gt;&lt;/h2&gt;
   &lt;div class=&quot;divider&quot;&gt;&lt;/div&gt;
-  &lt;p class=&quot;section-intro&quot;&gt;Academic projects spanning global market entry, brand strategy, and integrated campaign planning — two distinct industries, one consistent analytical approach.&lt;/p&gt;
+  &lt;p class=&quot;section-intro&quot;&gt;Academic projects spanning global market entry, brand strategy, and integrated campaign planning across two distinct industries, one consistent analytical approach.&lt;/p&gt;
 
   &lt;div class=&quot;projects-grid&quot;&gt;
 
@@ -1498,10 +1541,10 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
           &lt;div class=&quot;visual-stats-row&quot;&gt;
             &lt;div class=&quot;visual-stat&quot;&gt;
               &lt;strong&gt;£199,200&lt;/strong&gt;
-              Year-One Overhead
+              First Year Overhead
             &lt;/div&gt;
             &lt;div class=&quot;visual-stat&quot;&gt;
-              &lt;strong&gt;5-Year&lt;/strong&gt;
+              &lt;strong&gt;Five Year&lt;/strong&gt;
               Revenue Forecast
             &lt;/div&gt;
             &lt;div class=&quot;visual-stat&quot;&gt;
@@ -1514,14 +1557,15 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
       &lt;div class=&quot;card-body&quot;&gt;
         &lt;span class=&quot;card-number&quot;&gt;01&lt;/span&gt;
         &lt;div class=&quot;card-tag&quot;&gt;Global Market Entry&lt;/div&gt;
-        &lt;h3 class=&quot;card-title&quot;&gt;CASHERA — Vietnamese Cashews to the UK Market&lt;/h3&gt;
-        &lt;p class=&quot;card-subtitle&quot;&gt;Go-to-market business plan | Chapter 6 Lead&lt;/p&gt;
+        &lt;h3 class=&quot;card-title&quot;&gt;CASHERA: Vietnamese Cashews to the UK Market&lt;/h3&gt;
+        &lt;p class=&quot;card-subtitle&quot;&gt;Market entry business plan | Chapter 6 Lead&lt;/p&gt;
         &lt;p class=&quot;card-desc&quot;&gt;
-          A full go-to-market plan for CASHERA, a premium Vietnamese cashew brand entering the UK market. The project covered TAM/SAM/SOM analysis, a 5-year revenue forecast, pricing strategy, and a complete IMC plan spanning Amazon UK, social media, and food exhibitions.
+          A full market entry plan for CASHERA, a premium Vietnamese cashew brand entering the UK market. The project covered TAM/SAM/SOM analysis, pricing strategy, sales forecasting, cost structure, and an IMC plan across Amazon UK, social media, and food exhibitions.
         &lt;/p&gt;
+        &lt;div class=&quot;card-insight&quot;&gt;&lt;strong&gt;Key research point&lt;/strong&gt;The strongest angle is Vietnam origin plus premium positioning. The plan shows how a cashew product can move from commodity export logic into a branded consumer product with clearer margins and a stronger story.&lt;/div&gt;
         &lt;div class=&quot;card-contribution&quot;&gt;
           &lt;div class=&quot;card-contribution-label&quot;&gt;My Contribution&lt;/div&gt;
-          &lt;p&gt;Led Chapter 6 — the financial and commercial core of the plan. Built the £199,200 year-one overhead breakdown, 5-year sales forecast, break-even analysis, and income statement. Defined the hybrid pricing strategy (market-based + value-based + penetration) with CIF Incoterm and Irrevocable L/C payment terms.&lt;/p&gt;
+          &lt;p&gt;Led Chapter 6, the financial and commercial core of the plan. Built the £199,200 first year overhead breakdown, five year sales forecast, breakeven analysis, and income statement. Defined the hybrid pricing strategy (market driven + value led + penetration) with CIF Incoterm and Irrevocable L/C payment terms.&lt;/p&gt;
         &lt;/div&gt;
         &lt;div class=&quot;card-tags&quot;&gt;
           &lt;span class=&quot;tag green&quot;&gt;Financial Modelling&lt;/span&gt;
@@ -1567,14 +1611,15 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
       &lt;div class=&quot;card-body&quot;&gt;
         &lt;span class=&quot;card-number&quot;&gt;02&lt;/span&gt;
         &lt;div class=&quot;card-tag&quot;&gt;Brand Strategy · Creative&lt;/div&gt;
-        &lt;h3 class=&quot;card-title&quot;&gt;Danisa Rainbow Cookies — Limited Edition Tet Campaign&lt;/h3&gt;
+        &lt;h3 class=&quot;card-title&quot;&gt;Danisa Rainbow Cookies: Limited Edition Tet Campaign&lt;/h3&gt;
         &lt;p class=&quot;card-subtitle&quot;&gt;Product concept &amp; positioning | Group project&lt;/p&gt;
         &lt;p class=&quot;card-desc&quot;&gt;
-          A go-to-market concept for a limited-edition Tet product under the Danisa brand, targeting middle-to-high income Vietnamese consumers. The campaign centred on a &quot;7 colors, 7 flavors&quot; rainbow theme, positioning the tin as a premium cultural gift — not just a cookie, but a symbol of gratitude and family connection during Lunar New Year.
+          A market entry concept for a limited edition Tet product under the Danisa brand, targeting middle to high income Vietnamese consumers. The campaign centred on a &quot;7 colors, 7 flavors&quot; rainbow theme, positioning the tin as a premium cultural gift, not just a cookie product.
         &lt;/p&gt;
+        &lt;div class=&quot;card-insight&quot;&gt;&lt;strong&gt;Key research point&lt;/strong&gt;Tet gifting is driven by emotion, status, and family symbolism. The campaign works better when the rainbow idea is framed as seven wishes or seven expressions of care, making the product more meaningful than a normal seasonal package.&lt;/div&gt;
         &lt;div class=&quot;card-contribution&quot;&gt;
           &lt;div class=&quot;card-contribution-label&quot;&gt;My Contribution&lt;/div&gt;
-          &lt;p&gt;Structured the strategic rationale for choosing Danisa — including Vietnam&#x27;s 1.33B USD cookie market and Tet&#x27;s 54% share of confectionery sales. Shaped the brand positioning section, framing Rainbow Cookies as a cultural symbol rather than a product extension. Refined and presented both sections to align with the campaign brief.&lt;/p&gt;
+          &lt;p&gt;Structured the strategic rationale for choosing Danisa, supported by Vietnam&#x27;s 1.33B USD cookie market and Tet&#x27;s 54% share of confectionery sales. Shaped the brand positioning section, framing Rainbow Cookies as a cultural symbol rather than a product extension. Refined and presented both sections to align with the campaign brief.&lt;/p&gt;
         &lt;/div&gt;
         &lt;div class=&quot;card-tags&quot;&gt;
           &lt;span class=&quot;tag green&quot;&gt;Brand Positioning&lt;/span&gt;
@@ -1590,7 +1635,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
     &lt;div class=&quot;coming-soon-card fade-in&quot;&gt;
       &lt;div class=&quot;coming-soon-icon&quot;&gt;📱&lt;/div&gt;
       &lt;div class=&quot;coming-soon-text&quot;&gt;
-        &lt;h3&gt;Digital Marketing Project — Coming Soon&lt;/h3&gt;
+        &lt;h3&gt;Digital Marketing Project Coming Soon&lt;/h3&gt;
         &lt;p&gt;A digital campaign analysis or social media strategy piece is currently in progress. This section will be updated once the FPT role scope is confirmed. Check back soon.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
@@ -1602,7 +1647,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
 &lt;div class=&quot;about-section&quot; id=&quot;about&quot;&gt;
   &lt;div class=&quot;about-grid&quot;&gt;
     &lt;blockquote class=&quot;about-quote fade-in&quot;&gt;
-      My logistics background gives me an angle most marketing candidates don&#x27;t have — I understand the supply chain behind the product, not just the campaign in front of it.
+      My logistics background gives me an angle most marketing candidates don&#x27;t have because I understand the supply chain behind the product, not just the campaign in front of it.
     &lt;/blockquote&gt;
     &lt;div class=&quot;about-details fade-in&quot;&gt;
       &lt;div class=&quot;about-item&quot;&gt;
@@ -1619,7 +1664,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
       &lt;/div&gt;
       &lt;div class=&quot;about-item&quot;&gt;
         &lt;div class=&quot;about-item-label&quot;&gt;Also Experienced In&lt;/div&gt;
-        &lt;div class=&quot;about-item-value&quot;&gt;Export-Import Operations · Incoterms 2020 · CargoWise One · Supply Chain Analysis&lt;/div&gt;
+        &lt;div class=&quot;about-item-value&quot;&gt;Export and Import Operations · Incoterms 2020 · CargoWise One · Supply Chain Analysis&lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -1649,7 +1694,7 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
 
 &lt;!-- FOOTER --&gt;
 &lt;footer&gt;
-  &lt;div&gt;© 2025 Truong Ba Thuan — Marketing Portfolio&lt;/div&gt;
+  &lt;div&gt;© 2025 Truong Ba Thuan Marketing Portfolio&lt;/div&gt;
 
 &lt;/footer&gt;
 
