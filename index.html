@@ -410,6 +410,14 @@ footer{
   display:flex;align-items:center;justify-content:space-between;
 }
 .footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.3);letter-spacing:0.05em}
+.builder-note{
+  font-size:0.72rem;
+  color:rgba(255,255,255,0.42);
+  letter-spacing:0.04em;
+  text-align:center;
+  max-width:520px;
+  line-height:1.6;
+}
 .footer-name{
   font-family:'Syne',sans-serif;
   font-size:0.8rem;font-weight:700;
@@ -437,33 +445,119 @@ footer{
   top:5.15rem;
   right:1.25rem;
   z-index:260;
-  display:flex;
-  gap:.45rem;
-  padding:.35rem;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  width:min(350px, calc(100vw - 2.5rem));
+  gap:.25rem;
+  padding:.28rem;
   background:rgba(245,244,240,.88);
   border:.5px solid rgba(27,42,107,.18);
   backdrop-filter:blur(14px);
   border-radius:999px;
   box-shadow:0 10px 35px rgba(13,22,64,.10);
+  overflow:hidden;
+}
+.unified-switcher::before{
+  content:'';
+  position:absolute;
+  top:.35rem;
+  left:.35rem;
+  width:calc((100% - .81rem) / 2);
+  height:calc(100% - .56rem);
+  background:var(--indigo);
+  border-radius:999px;
+  box-shadow:0 8px 22px rgba(13,22,64,.18);
+  transition:transform .72s cubic-bezier(.16,.72,.22,1);
+}
+.unified-switcher[data-active="marketing"]::before{
+  transform:translateX(calc(100% + .25rem));
 }
 .unified-tab{
+  position:relative;
+  z-index:1;
   border:0;
   cursor:pointer;
   font-family:'DM Sans',sans-serif;
-  font-size:.72rem;
-  font-weight:500;
-  letter-spacing:.06em;
+  font-size:.64rem;
+  font-weight:700;
+  letter-spacing:.075em;
   text-transform:uppercase;
   color:var(--indigo);
   background:transparent;
-  padding:.62rem .9rem;
+  padding:.58rem .72rem;
   border-radius:999px;
-  transition:background .2s,color .2s,transform .15s;
+  white-space:nowrap;
+  text-align:center;
+  transition:color .48s ease,transform .36s ease,opacity .36s ease;
 }
-.unified-tab:hover{transform:translateY(-1px);background:rgba(27,42,107,.06)}
-.unified-tab.active{background:var(--indigo);color:#fff}
-.portfolio-panel{display:none;min-height:100vh}
-.portfolio-panel.active{display:block}
+.unified-tab:hover{transform:translateY(-1px);opacity:.88}
+.unified-tab.active{color:#fff}
+.portfolio-panel{
+  display:none;
+  min-height:100vh;
+  opacity:0;
+  transform:translateY(0);
+  filter:blur(0);
+  transition:opacity .68s ease,transform .68s ease,filter .68s ease;
+  background:var(--off-white);
+}
+#logistics-panel{background:var(--indigo-dim)}
+#marketing-panel{background:#FBF5DD}
+.portfolio-panel.active{
+  display:block;
+  opacity:1;
+  transform:translateY(0);
+  filter:blur(0);
+}
+.portfolio-panel.is-leaving{
+  display:block;
+  position:fixed;
+  inset:0;
+  z-index:210;
+  overflow:hidden;
+  pointer-events:none;
+  opacity:0;
+  transform:translateY(-2px);
+  filter:blur(.6px);
+}
+.portfolio-panel.is-entering{
+  display:block;
+  opacity:1;
+  transform:translateY(0);
+  filter:blur(0);
+}
+
+/* Make the marketing portfolio enter with the same soft pop feeling as the logistics side */
+#marketing-panel .marketing-frame-wrap{
+  opacity:0;
+  transform:translateY(28px) scale(.982);
+  filter:blur(3px);
+  transform-origin:top center;
+  transition:
+    opacity .82s ease,
+    transform .82s cubic-bezier(.16,.72,.22,1),
+    filter .82s ease;
+}
+#marketing-panel.active .marketing-frame-wrap{
+  opacity:1;
+  transform:translateY(0) scale(1);
+  filter:blur(0);
+}
+#marketing-panel.is-leaving .marketing-frame-wrap{
+  opacity:0;
+  transform:translateY(-8px) scale(.992);
+  filter:blur(1px);
+}
+#logistics-panel.active{
+  animation:portfolioSoftPop .78s cubic-bezier(.16,.72,.22,1);
+}
+#marketing-panel.active{
+  animation:portfolioSoftPop .78s cubic-bezier(.16,.72,.22,1);
+}
+@keyframes portfolioSoftPop{
+  from{opacity:.96;transform:translateY(6px) scale(.998);filter:blur(.8px)}
+  to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+}
 .marketing-frame-wrap{
   min-height:100vh;
   background:linear-gradient(135deg,var(--off-white) 0%,#FBF5DD 100%);
@@ -477,8 +571,8 @@ footer{
   background:#FBF5DD;
 }
 @media(max-width:768px){
-  .unified-switcher{top:auto;bottom:1rem;right:1rem;left:1rem;justify-content:center}
-  .unified-tab{flex:1;text-align:center;padding:.72rem .5rem}
+  .unified-switcher{top:auto;bottom:1rem;right:1rem;left:1rem;width:auto}
+  .unified-tab{font-size:.66rem;letter-spacing:.05em;padding:.72rem .45rem}
   .marketing-frame{height:100vh}
 }
 
@@ -487,7 +581,7 @@ footer{
 </head>
 
 <body>
-<div class="unified-switcher" aria-label="Portfolio tabs">
+<div class="unified-switcher" aria-label="Portfolio tabs" data-active="logistics">
   <button class="unified-tab active" id="tab-logistics" type="button" onclick="showPortfolioTab('logistics')">Logistics Home</button>
   <button class="unified-tab" id="tab-marketing" type="button" onclick="showPortfolioTab('marketing')">Marketing</button>
 </div>
@@ -686,6 +780,7 @@ footer{
 
 <footer>
   <span class="footer-copy">© 2026 Truong Ba Thuan</span>
+  <span class="builder-note">This portfolio was built personally by Truong Ba Thuan, with AI assisted development support from Claude and ChatGPT.</span>
   <span class="footer-name">TBT</span>
 </footer>
 
@@ -1511,6 +1606,12 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
   }
 
   footer span { color: var(--amber); }
+  .builder-note {
+    color: rgba(255,255,255,0.48);
+    text-align: center;
+    max-width: 560px;
+    line-height: 1.6;
+  }
 
   /* SCROLL ANIMATIONS */
   .fade-in {
@@ -1768,8 +1869,9 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
 
 &lt;!-- FOOTER --&gt;
 &lt;footer&gt;
-  &lt;div&gt;© 2025 Truong Ba Thuan Marketing Portfolio&lt;/div&gt;
-
+  &lt;div&gt;© 2026 Truong Ba Thuan&lt;/div&gt;
+  &lt;div class=&quot;builder-note&quot;&gt;This portfolio was built personally by Truong Ba Thuan, with AI assisted development support from Claude and ChatGPT.&lt;/div&gt;
+  &lt;span&gt;TBT&lt;/span&gt;
 &lt;/footer&gt;
 
 &lt;script&gt;
@@ -1798,18 +1900,117 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); }
 </div>
 
 <script>
+let currentPortfolioTab = 'logistics';
+let portfolioTransitionTimer = null;
+
+function replayHeroSequence(root, isFrame = false) {
+  if (!root) return;
+  const targets = [
+    ['.hero-tag', 0],
+    ['.hero-name', 180],
+    ['.hero-subtitle', 340],
+    ['.hero-desc', 470],
+    ['.hero-actions, .hero-cta', 610],
+    ['.hero-scroll', 760]
+  ];
+
+  targets.forEach(([selector, delay]) => {
+    const elements = root.querySelectorAll(selector);
+    elements.forEach((el) => {
+      if (!el) return;
+      try {
+        el.getAnimations().forEach(animation => animation.cancel());
+        el.animate(
+          [
+            { opacity: 0, transform: 'translateY(28px) scale(.985)', filter: 'blur(3px)' },
+            { opacity: 1, transform: 'translateY(0) scale(1)', filter: 'blur(0)' }
+          ],
+          {
+            duration: 900,
+            delay,
+            easing: 'cubic-bezier(.18,.85,.24,1)',
+            fill: 'both'
+          }
+        );
+      } catch (error) {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+        el.style.filter = 'blur(0)';
+      }
+    });
+  });
+}
+
+function replayLogisticsHeroAnimation() {
+  const logistics = document.getElementById('logistics-panel');
+  replayHeroSequence(logistics);
+}
+
+function replayMarketingHeroAnimation() {
+  const frame = document.querySelector('.marketing-frame');
+  if (!frame) return;
+
+  const run = () => {
+    try {
+      const doc = frame.contentDocument || frame.contentWindow.document;
+      frame.contentWindow.scrollTo(0, 0);
+      replayHeroSequence(doc, true);
+    } catch (error) {
+      frame.style.opacity = '1';
+    }
+  };
+
+  if (frame.contentDocument && frame.contentDocument.readyState !== 'loading') {
+    run();
+  } else {
+    frame.addEventListener('load', run, { once: true });
+  }
+}
+
 function showPortfolioTab(tab) {
+  if (tab === currentPortfolioTab) return;
+
+  const switcher = document.querySelector('.unified-switcher');
   const logistics = document.getElementById('logistics-panel');
   const marketing = document.getElementById('marketing-panel');
   const tabLog = document.getElementById('tab-logistics');
   const tabMkt = document.getElementById('tab-marketing');
+  const currentPanel = currentPortfolioTab === 'marketing' ? marketing : logistics;
+  const nextPanel = tab === 'marketing' ? marketing : logistics;
   const isMarketing = tab === 'marketing';
-  logistics.classList.toggle('active', !isMarketing);
-  marketing.classList.toggle('active', isMarketing);
+
+  clearTimeout(portfolioTransitionTimer);
+  switcher.dataset.active = tab;
   tabLog.classList.toggle('active', !isMarketing);
   tabMkt.classList.toggle('active', isMarketing);
-  document.documentElement.scrollTop = 0;
-  document.body.scrollTop = 0;
+
+  /* Put the next portfolio in place immediately, then fade the old one away on top.
+     This prevents the white flash that can appear when the marketing iframe is hidden
+     before the logistics hero has painted. */
+  window.scrollTo({ top: 0, behavior: 'auto' });
+
+  nextPanel.classList.add('active', 'is-entering');
+  nextPanel.classList.remove('is-leaving');
+
+  currentPanel.classList.add('is-leaving');
+  currentPanel.classList.remove('is-entering');
+
+  requestAnimationFrame(() => {
+    nextPanel.classList.remove('is-entering');
+
+    setTimeout(() => {
+      if (isMarketing) {
+        replayMarketingHeroAnimation();
+      } else {
+        replayLogisticsHeroAnimation();
+      }
+    }, 180);
+  });
+
+  portfolioTransitionTimer = setTimeout(() => {
+    currentPanel.classList.remove('is-leaving', 'active');
+    currentPortfolioTab = tab;
+  }, 760);
 }
 </script>
 </body>
